@@ -11,7 +11,7 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz
+ADD https://github.com/obrazhey/immich-go-docker.git ./
 ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz ./ 
 RUN tar -xzf immich-go_Linux_x86_64.tar.gz \
 && rm immich-go_Linux_x86_64.tar.gz \
