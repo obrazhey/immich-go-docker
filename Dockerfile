@@ -1,11 +1,9 @@
 FROM alpine:3.20
-ENV IMMICH_INSTANCE_URL=""
-ENV IMMICH_API_KEY=""
+ENV TZ=Europe/Moscow
 
 RUN apk update \
 && apk add tzdata \
 && ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-ENV TZ=Europe/Moscow
 
 RUN mkdir /app
 
@@ -15,6 +13,6 @@ ADD https://github.com/obrazhey/immich-go-docker.git ./
 ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz ./ 
 RUN tar -xzf immich-go_Linux_x86_64.tar.gz \
 && rm immich-go_Linux_x86_64.tar.gz \
-&& chmod +x immich-go
+&& chmod +x immich-go && chmod +x run.sh
 
-ENTRYPOINT ["run.sh"]   
+ENTRYPOINT ["./run.sh"]   
