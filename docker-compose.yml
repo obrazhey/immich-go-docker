@@ -1,0 +1,18 @@
+name: immich-go
+
+services:
+  immich-go:
+    container_name: immich-go
+    build: https://github.com/obrazhey/immich-go-docker.git
+    volumes:
+      - import:/import
+    env_file:
+      - stack.env  
+    restart: "no"
+volumes:
+  import:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=${NAS_IP},ro,noatime,rsize=8192,wsize=8192,tcp,timeo=14,nfsvers=4
+      device: ${UPLOAD_PATH} 
