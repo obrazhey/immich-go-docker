@@ -6,7 +6,6 @@ services:
     build: https://github.com/obrazhey/immich-go-docker.git  
     volumes:
       - import:/import
-      - /etc/localtime:/etc/localtime:ro
     env_file:
       - stack.env 
     restart: "no"
