@@ -13,4 +13,7 @@ RUN tar -xzf immich-go_Linux_x86_64.tar.gz \
 && rm immich-go_Linux_x86_64.tar.gz \
 && chmod +x immich-go
 
-ENTRYPOINT ["sh", "-c", "./immich-go", "-server=$IMMICH_INSTANCE_URL", "-key=$IMMICH_API_KEY", "upload", "/import"]   
+ADD https://github.com/obrazhey/immich-go-docker/raw/refs/heads/main/run.sh
+RUN chmod +x run.sh
+
+ENTRYPOINT ["run.sh"]   
