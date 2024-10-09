@@ -4,6 +4,7 @@ ARG IMMICH_API_KEY
 
 RUN apk add --no-cache tzdata
 ENV TZ=Europe/Moscow
+RUN cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 
 RUN mkdir /app
 
