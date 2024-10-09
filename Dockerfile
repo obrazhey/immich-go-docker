@@ -4,10 +4,12 @@ ARG IMMICH_API_KEY
 
 RUN mkdir /app
 
-ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz /app
-
 WORKDIR /app
 
-RUN chmod 0755 /app/immich-go
+ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz .
 
-ENTRYPOINT ["/app/immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
+
+
+RUN chmod 0755 ./immich-go
+
+ENTRYPOINT ["./immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
