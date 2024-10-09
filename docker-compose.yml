@@ -3,11 +3,12 @@ name: immich-go
 services:
   immich-go:
     container_name: immich-go
-    build: https://github.com/obrazhey/immich-go-docker.git
+    build: https://github.com/obrazhey/immich-go-docker.git  
     volumes:
       - import:/import
+      - /etc/localtime:/etc/localtime:ro
     env_file:
-      - stack.env  
+      - stack.env 
     restart: "no"
 volumes:
   import:
