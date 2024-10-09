@@ -2,8 +2,6 @@ FROM ubuntu:24.10
 ARG IMMICH_INSTANCE_URL
 ARG IMMICH_API_KEY
 
-RUN apk add -U tzdata
-
 RUN mkdir /app
 
 WORKDIR /app
