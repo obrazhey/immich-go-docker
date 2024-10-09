@@ -10,4 +10,4 @@ WORKDIR /app
 
 RUN chmod 0755 /app/immich-go
 
-ENTRYPOINT ["./immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
+ENTRYPOINT ["/app/immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
