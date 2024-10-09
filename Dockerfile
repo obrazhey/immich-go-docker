@@ -2,9 +2,10 @@ FROM alpine:3.20
 ARG IMMICH_INSTANCE_URL
 ARG IMMICH_API_KEY
 
-RUN apk update && add tzdata \
-&& ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+RUN apk update && add tzdata
 ENV TZ=Europe/Moscow
+RUN ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+
 
 RUN mkdir /app
 
