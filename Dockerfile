@@ -2,6 +2,8 @@ FROM alpine:3.20
 ARG IMMICH_INSTANCE_URL
 ARG IMMICH_API_KEY
 
+RUN apk add -U tzdata
+
 RUN mkdir /app
 
 WORKDIR /app
