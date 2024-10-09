@@ -1,7 +1,7 @@
 FROM alpine:3.20
 ARG IMMICH_INSTANCE_URL
 ARG IMMICH_API_KEY
-ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz ./
+ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linux_x86_64.tar.gz /
 
 WORKDIR /import
 
