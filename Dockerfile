@@ -1,6 +1,9 @@
-FROM ubuntu:24.10
+FROM alpine:3.20
 ARG IMMICH_INSTANCE_URL
 ARG IMMICH_API_KEY
+
+RUN apk add --no-cache tzdata
+ENV TZ=Europe/Moscow
 
 RUN mkdir /app
 
