@@ -5,4 +5,4 @@ ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linu
 
 WORKDIR /import
 
-ENTRYPOINT ["immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
+ENTRYPOINT ["/immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
