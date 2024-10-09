@@ -1,6 +1,6 @@
 FROM alpine:3.20
-ENV IMMICH_INSTANCE_URL
-ENV IMMICH_API_KEY
+ENV IMMICH_INSTANCE_URL=""
+ENV IMMICH_API_KEY=""
 
 RUN apk update \
 && apk add tzdata \
