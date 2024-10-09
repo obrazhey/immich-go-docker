@@ -8,4 +8,6 @@ ADD https://github.com/simulot/immich-go/releases/download/0.22.0/immich-go_Linu
 
 WORKDIR /app
 
+RUN chmod 0755 /app/immich-go
+
 ENTRYPOINT ["./immich-go", "-server=${IMMICH_INSTANCE_URL}", "-key=${IMMICH_API_KEY}", "upload", "/import"]   
