@@ -15,4 +15,4 @@ RUN tar -xzf immich-go_Linux_x86_64.tar.gz \
 && chmod +x immich-go \
 && chmod +x run.sh
 
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["./run.sh"]
